@@ -37,7 +37,7 @@ git clone {link to repository}
 5. Run _$ npm install_
 6. Run _$ npm run build_
 7. Run _$ npm run start_
-8. Enjoy
+8. Create an .env file  to stored API_KEY
 
 ## Specs
 
