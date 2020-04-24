@@ -6,23 +6,22 @@ import { CurrencyService } from './../src/currency-service.js';
 $(document).ready(function(){
   $("#currencyInfo").click(function(){
     
-    let amountUSD = $("#amount").val();
+    let amountUSD = parseInt($("#amount").val());
+    console.log(amountUSD+ "    =====================" )
     let typeOfCurrency = $("#convertCurrency").val();
-
+    console.log(typeof typeOfCurrency);
+    
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrency();
-      console.log("val");
-      console.log("respons " + response);
       getResponse(response);
      })();
 
     function getResponse(response){
       if (response){
-        let totalUSD = response.conversion_rates.USD * amountUSD;
-        console.log(totalUSD+" -------------------")
-        let finalCurrency = totalUSD * `response.conversion_rates.${typeOfCurrency}`;
-        $(".display").text("success " + finalCurrency);   
+        Object.entries(response);
+        console.log(Object.values+ "  object")
+        $(".display").text("success ");   
       }else{
         $(".error").text("error");
       }
