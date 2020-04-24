@@ -5,18 +5,20 @@
   <body>
     <div class="container">
       <h1>Currency Exchanger</h1>
-      <label>Enter your amount in U.S. dollars</label><br><br>
-      <input id="currency" type="text" value="$10.00" placeholder="Enter a value"><br><br>
+      <label>Enter your amount in USD</label><br><br>
+      <input id="amount" type="text" value="$10.00" placeholder="Enter a value"><br><br>
       <select class="form-control" id="convertCurrency">
-        <option>Francs</option>
-        <option>Marks</option>
-        <option>Rupies</option>
-        <option>Taka</option>
-        <option>Peso</option>
+        <option>AED</option>
+        <option>AUD</option>
+        <option>MXN</option>
+        <option>CAD</option>
+        <option>HRK</option>
         <option>others</option>
       </select>
       <label>Convert Currency</label><br><br>
       <button class="btn-success" id="currencyInfo">Convert Your Currency</button>
+      <div class="display"></div>
+      <div class="error"></div>
       
     </div>
   </body>
