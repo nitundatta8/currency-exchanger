@@ -5,8 +5,18 @@
   <body>
     <div class="container">
       <h1>Currency Exchanger</h1>
-      <input id="currency" type="text" placeholder="Enter a location">
-      <button class="btn-success" id="bikeInfo">Submit</button>
+      <label>Enter your amount in U.S. dollars</label><br><br>
+      <input id="currency" type="text" value="$10.00" placeholder="Enter a value"><br><br>
+      <select class="form-control" id="convertCurrency">
+        <option>Francs</option>
+        <option>Marks</option>
+        <option>Rupies</option>
+        <option>Taka</option>
+        <option>Peso</option>
+        <option>others</option>
+      </select>
+      <label>Convert Currency</label><br><br>
+      <button class="btn-success" id="currencyInfo">Convert Your Currency</button>
       
     </div>
   </body>
