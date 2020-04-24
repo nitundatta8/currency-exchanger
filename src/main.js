@@ -26,18 +26,14 @@ $(document).ready(function(){
     let typeOfCurrency = $("#convertCurrency").val();
     let typeInput = $("#otherCurType").val();
 
-
     if(typeOfCurrency==="Others"){
       typeOfCurrency = typeInput;
     }
-    
-    console.log("typeOfCurrency: "+typeOfCurrency);
     
     
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrency();
-      console.log("========   " + response);
       getResponse(response,amountUSD,typeOfCurrency);
      })();
      
