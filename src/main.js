@@ -25,13 +25,16 @@ $(document).ready(function(){
      })();
      
     function getResponse(response,amountUSD,typeOfCurrency){
-     
-        if (response.result === "success"){
-        
-        let totalAmout = (amountUSD *response.conversion_rates[typeOfCurrency]);
-        $(".display").text(`${amountUSD} USD = ${totalAmout} ${typeOfCurrency}`);   
+     if (response.result === "success"){
+        if(response.conversion_rates[typeOfCurrency] === null){
+          $(".error").text("the currency is doesn't exist");
+        }else{
+          let totalAmout = (amountUSD *response.conversion_rates[typeOfCurrency]);
+          $(".display").text(`${amountUSD} USD = ${totalAmout} ${typeOfCurrency}`);  
+        }
+         
       }else{
-        $(".error").text("the currency is doesn't exist");
+        $(".error").text("Server Error");
       }
     }
 
