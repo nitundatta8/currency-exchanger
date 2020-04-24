@@ -2,6 +2,7 @@
 
 import $ from "jquery";
 import { CurrencyService } from './../src/currency-service.js';
+import './styles.css';
 
 $(document).ready(function(){
   $("#typeInput").hide();
