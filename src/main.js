@@ -4,27 +4,34 @@ import $ from "jquery";
 import { CurrencyService } from './../src/currency-service.js';
 
 $(document).ready(function(){
+  //$("#typeInput").hide();
   $("#currencyInfo").click(function(){
-    
+    let typeOfCurrency;
     let amountUSD = parseInt($("#amount").val());
-    let typeOfCurrency = $("#convertCurrency").val();
+    typeOfCurrency = $("#convertCurrency").val();
+    
+    if(typeOfCurrency === "Others"){
+      //$("#typeInput").show();
+      typeOfCurrency = $("#type").val();
+    }
+    
     
     
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrency();
+      console.log("========   " + response);
       getResponse(response,amountUSD,typeOfCurrency);
      })();
      
     function getResponse(response,amountUSD,typeOfCurrency){
-      if (response){
+     
+        if (response.result === "success"){
+        
         let totalAmout = (amountUSD *response.conversion_rates[typeOfCurrency]);
-        console.log("Dataq:" + totalAmout);
-        
-        
         $(".display").text(`${amountUSD} USD = ${totalAmout} ${typeOfCurrency}`);   
       }else{
-        $(".error").text("error");
+        $(".error").text("the currency is doesn't exist");
       }
     }
 

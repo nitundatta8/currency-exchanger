@@ -7,15 +7,20 @@
       <h1>Currency Exchanger</h1>
       <label>Enter your amount in USD</label><br><br>
       <input id="amount" type="text" placeholder="Enter a value"><br><br>
+      <label>Convert Currency</label><br>
       <select class="form-control" id="convertCurrency">
         <option>AED</option>
         <option>AUD</option>
         <option>MXN</option>
         <option>CAD</option>
         <option>HRK</option>
-        <option>others</option>
+        <option>Others</option>
       </select>
-      <label>Convert Currency</label><br><br>
+      <div id="typeInput"><br>
+        <label> Currency Type</label>
+        <input id="type" type="text" placeholder="USD">
+      </div>
+      
       <button class="btn-success" id="currencyInfo">Convert Your Currency</button>
       <div class="display"></div>
       <div class="error"></div>
