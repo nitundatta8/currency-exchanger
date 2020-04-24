@@ -4,17 +4,34 @@ import $ from "jquery";
 import { CurrencyService } from './../src/currency-service.js';
 
 $(document).ready(function(){
-  //$("#typeInput").hide();
-  $("#currencyInfo").click(function(){
-    let typeOfCurrency;
-    let amountUSD = parseInt($("#amount").val());
-    typeOfCurrency = $("#convertCurrency").val();
+  $("#typeInput").hide();
+ 
+  $("#convertCurrency").change(function(){
+   // let typeOfCurrency;
+  let   typeOfCurrency = $("#convertCurrency").val();
     
     if(typeOfCurrency === "Others"){
-      //$("#typeInput").show();
-      typeOfCurrency = $("#type").val();
+      $("#typeInput").show();
+      
+    }else{
+      $("#typeInput").hide();
+    }
+
+  });
+  
+  
+  $("#currencyInfo").click(function(){
+    
+    let amountUSD = parseInt($("#amount").val());
+    let typeOfCurrency = $("#convertCurrency").val();
+    let typeInput = $("#otherCurType").val();
+
+
+    if(typeOfCurrency==="Others"){
+      typeOfCurrency = typeInput;
     }
     
+    console.log("typeOfCurrency: "+typeOfCurrency);
     
     
     (async () => {
@@ -26,8 +43,8 @@ $(document).ready(function(){
      
     function getResponse(response,amountUSD,typeOfCurrency){
      if (response.result === "success"){
-        if(response.conversion_rates[typeOfCurrency] === null){
-          $(".error").text("the currency is doesn't exist");
+        if( typeof response.conversion_rates[typeOfCurrency] === 'undefined'){
+          $(".error").text("The currency doesn't exist");
         }else{
           let totalAmout = (amountUSD *response.conversion_rates[typeOfCurrency]);
           $(".display").text(`${amountUSD} USD = ${totalAmout} ${typeOfCurrency}`);  
