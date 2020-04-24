@@ -54,7 +54,7 @@ _N/A_ - 4/24/2020
 
 ## gh-pages
 
-WiseFool92.github.io/lol-animals
+* Alternatively, open the webpage at https://nitundatta8.github.io/currency-exchanger/
 
 ## Support
 
