@@ -7,21 +7,22 @@ $(document).ready(function(){
   $("#currencyInfo").click(function(){
     
     let amountUSD = parseInt($("#amount").val());
-    console.log(amountUSD+ "    =====================" )
     let typeOfCurrency = $("#convertCurrency").val();
-    console.log(typeof typeOfCurrency);
+    
     
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrency();
-      getResponse(response);
+      getResponse(response,amountUSD,typeOfCurrency);
      })();
-
-    function getResponse(response){
+     
+    function getResponse(response,amountUSD,typeOfCurrency){
       if (response){
-        Object.entries(response);
-        console.log(Object.values+ "  object")
-        $(".display").text("success ");   
+        let totalAmout = (amountUSD *response.conversion_rates[typeOfCurrency]);
+        console.log("Dataq:" + totalAmout);
+        
+        
+        $(".display").text(`${amountUSD} USD = ${totalAmout} ${typeOfCurrency}`);   
       }else{
         $(".error").text("error");
       }
