@@ -4,7 +4,7 @@
 
 ## Description
 
-_This web application alow a user to type in an amount (in U.S. dollars) and then choose which currency it should be converted to (such as francs, marks, rupees, and so on) with the most recent exchange rate._
+_This web application allows a user to enter an amount (in U.S. dollars) and then choose which currency it should be converted to (such as francs, marks, rupees, and so on) with the most recent exchange rate._
 
 _This site is already linked to an index.html, styles.css, jQuery.js(3.4.1), scripts.js., main.js, jest, babel, lint, webpack, json, & gitignore_
 
@@ -42,9 +42,10 @@ git clone {link to repository}
 ## Specs
 
 ### Behavior Driven Development Spec List
-
-
-
+1. The program allows a user to enter an amount (in U.S. dollars) and then specify another currency (such as the South Korean won)to get the total amount they entered in converted currency.  
+2. A user can able to convert U.S. currency into at least 5 other types of currency.
+3. A user get an error notification if the API call results in an error.
+4. A user get an notification if the query response doesn't include that particular currency.
 
 ---
 ## Known Bugs
@@ -57,7 +58,7 @@ WiseFool92.github.io/lol-animals
 
 ## Support
 
-_Email: watkins92@gmail.com_
+_Email: nitundatta8@gmail.com_
 
 ---
 ## Built With
